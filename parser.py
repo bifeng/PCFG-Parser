@@ -1,7 +1,7 @@
 #! /usr/bin/python
-import json
 import os
 import sys
+
 from cky_implement import CKY
 from rare_word_handler import RareReplacer
 from rule_parameter_computer import ParameterComputer
@@ -16,7 +16,7 @@ def q4_caller(input, output):
 
 def q5_caller(train, dev, pred):
     os.system("python count_cfg_freq.py %s > new_cfg.counts" % train)
-    PC = ParameterComputer("hw2/new_cfg.counts")
+    PC = ParameterComputer("new_cfg.counts")
     PC.counter()
     PC.parameter_computer()
     obj = CKY(PC.binary_parameter, PC.uni_parameter)
